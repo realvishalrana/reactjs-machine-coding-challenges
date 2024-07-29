@@ -1,4 +1,4 @@
-Task Link : [Countdown Timer](https://frontendeval.com/questions/faq-component)
+Task Link : [Faq Component](https://frontendeval.com/questions/faq-component)
 
 [Demo](https://reactjs-machine-coding-challenges.vercel.app/)
 
