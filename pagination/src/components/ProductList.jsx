@@ -1,20 +1,23 @@
 import React from "react";
 import useList from "../hooks/useList";
-import Pagination from "./Pagination";
 import DisplayList from "./DisplayList";
+import Pagination from "./Pagination";
+
 
 const ProductList = () => {
   const props = useList();
 
-  const { products, page } = props;
+  const { products, page, pageLimit } = props;
 
   return (
     <div>
       {products?.length > 0 && (
         <div className="products">
-          {products.slice(page * 10 - 10, page * 10).map((prod) => {
-            return <DisplayList prod={prod} />;
-          })}
+          {products
+            .slice((page - 1) * pageLimit, page * pageLimit)
+            .map((prod) => (
+              <DisplayList key={prod.id} prod={prod} />
+            ))}
         </div>
       )}
       <Pagination {...props} />
